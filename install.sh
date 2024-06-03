@@ -21,7 +21,15 @@ sudo rm /etc/supervisor/conf.d/video_looper.conf &>/dev/null
 
 echo "Installing dependencies..."
 echo "=========================="
-sudo apt update && sudo apt -y install python3 python3-pip python3-pygame omxplayer ntfs-3g exfat-fuse python3-wheel libsdl2-ttf-2.0-0 libsdl2-image-2.0-0
+sudo apt update && sudo apt -y install python3 python3-pip omxplayer ntfs-3g exfat-fuse libsdl2-ttf-2.0-0 libsdl2-image-2.0-0
+
+# pygame1 dependencies:
+sudo apt -y install git python3-dev python3-setuptools python3-numpy python3-opengl \
+    libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsmpeg-dev \
+    libsdl1.2-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev \
+    libtiff5-dev libx11-6 libx11-dev fluid-soundfont-gm timgm6mb-soundfont \
+    xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic fontconfig fonts-freefont-ttf libfreetype6-dev
+
 
 if [ "$*" != "no_hello_video" ]
 then

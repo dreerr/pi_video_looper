@@ -20,7 +20,8 @@ classifiers = [
 ]
 dependencies = [
     "pyudev==0.24.1",
-    "pygame==2.5.2"
+    "pygame<2",
+    "RPI.GPIO==0.7.1"
 ]
 
 [project.urls]
