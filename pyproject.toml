@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "Adafruit_Video_Looper"
-version = "1.0.17"
+version = "1.5.1"
 authors = [
   { name="Tony DiCola", email="tdicola@adafruit.com" },
   { name="Tobias Perschon", email="tobias@perschon.at" },

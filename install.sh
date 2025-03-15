@@ -52,9 +52,12 @@ fi
 echo "Installing video_looper program..."
 echo "=================================="
 
-sudo mkdir -p /mnt/usbdrive0 # This is very important if you put your system in readonly after
-sudo mkdir -p /home/pi/video # create default video directory
-sudo chown pi:root /home/pi/video
+# change the directoy to the script location
+cd "$(dirname "$0")"
+
+mkdir -p /mnt/usbdrive0 # This is very important if you put your system in readonly after
+mkdir -p /home/pi/video # create default video directory
+chown pi:pi /home/pi/video
 
 sudo -u pi /usr/bin/python3 -m pip install --user --upgrade pip
 sudo -u pi /usr/bin/python3 -m pip install --user $SCRIPT_DIR
