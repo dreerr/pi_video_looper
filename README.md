@@ -1,5 +1,5 @@
 # pi_video_looper
-This is a fork of the original [Adafruit Pi Video Looper](https://github.com/adafruit/pi_video_looper) with added dual-screen support.
+**This is a fork of the original [Adafruit Pi Video Looper](https://github.com/adafruit/pi_video_looper) with added dual-screen support.**
 
 An application to turn your Raspberry Pi into a dedicated looping video playback device.
 Can be used in art installations, fairs, theatre, events, infoscreens, advertisements etc...
