@@ -137,8 +137,43 @@ There are also pre-compiled images available from <https://videolooper.de> (but 
 `cd pi_video_looper`
 `sudo ./install.sh`
 
-Default player is omxplayer. Use the `no_hello_video` flag to install without the hello_video player (a bit faster to install):
-`sudo ./install.sh no_hello_video`
+### Installation Options
+The install script now supports different media player options and automatically detects your system architecture:
+
+#### Media Player Options:
+- **Default behavior**: Automatically installs omxplayer on 32-bit ARM systems, VLC on 64-bit systems
+- **VLC only**: `sudo ./install.sh --vlc`
+- **omxplayer only**: `sudo ./install.sh --omxplayer` (32-bit ARM systems only)
+- **Both players**: `sudo ./install.sh --both` (omxplayer only installed if compatible)
+
+#### Additional Options:
+- **Skip hello_video**: Add `no_hello_video` to any command to skip hello_video installation:
+  - `sudo ./install.sh --vlc no_hello_video`
+  - `sudo ./install.sh no_hello_video`
+- **Help**: `./install.sh --help` to see all available options
+
+#### Architecture Compatibility:
+- **omxplayer**: Only works on 32-bit ARM systems (armv6l, armv7l)
+- **VLC**: Works on all architectures including 64-bit ARM (aarch64) and x86_64
+- The installer automatically detects your architecture and warns if omxplayer is incompatible
+
+#### Examples:
+```bash
+# Basic installation with automatic player selection
+sudo ./install.sh
+
+# Install with VLC on any system
+sudo ./install.sh --vlc
+
+# Install omxplayer only (if compatible)
+sudo ./install.sh --omxplayer
+
+# Install both players and skip hello_video
+sudo ./install.sh --both no_hello_video
+
+# Show help
+./install.sh --help
+```
 
 ## How to update
 An update is always like a fresh installation so you will loose custom changes made to the /boot/video_looper.ini
