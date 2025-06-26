@@ -111,7 +111,7 @@ echo "Installing dependencies..."
 echo "=========================="
 
 # Build package list
-PACKAGES="python3 python3-pip python3-pygame supervisor ntfs-3g exfat-fuse"
+PACKAGES="python3 python3-pip python3-pygame python3-setuptools supervisor ntfs-3g exfat-fuse"
 
 if [ "$INSTALL_VLC" = "true" ]; then
     echo "Adding VLC to installation list..."
@@ -152,8 +152,7 @@ mkdir -p /mnt/usbdrive0 # This is very important if you put your system in reado
 mkdir -p /home/pi/video # create default video directory
 chown pi:pi /home/pi/video
 
-pip3 install setuptools
-python3 setup.py install --force --break-system-packages
+python3 setup.py install --force
 
 cp ./assets/video_looper.ini /boot/video_looper.ini
 
