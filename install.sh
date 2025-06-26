@@ -83,7 +83,7 @@ if [ "$INSTALL_OMXPLAYER" = "true" ]; then
         echo "WARNING: omxplayer is not compatible with 64-bit systems."
         echo "omxplayer installation will be skipped."
         INSTALL_OMXPLAYER=false
-        
+
         # If only omxplayer was requested, suggest VLC instead
         if [ "$INSTALL_VLC" = "false" ]; then
             echo "Suggestion: Use --vlc option to install VLC media player instead."
@@ -153,7 +153,7 @@ mkdir -p /home/pi/video # create default video directory
 chown pi:pi /home/pi/video
 
 pip3 install setuptools
-python3 setup.py install --force
+python3 setup.py install --force --break-system-packages
 
 cp ./assets/video_looper.ini /boot/video_looper.ini
 
